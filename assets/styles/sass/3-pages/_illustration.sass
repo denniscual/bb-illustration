@@ -1,0 +1,498 @@
+// variables
+$border-color: #244356
+$dark-circle-color: #244356
+$big-cirle-color: rgb(241, 200, 55)
+$bb-body-color: #EBF2FA
+
+// mixins
+=border-size()
+  border: 12px solid $border-color
+
+*
+  box-sizing: border-box
+
+body
+  background-color: rgb(244, 244, 244)
+  font-family: 'Lato Regular', 'Railway', sans-serif
+
+.title
+  width: 100%
+
+  h1
+    text-align: center
+    margin: 90px 0 30px 0
+    font-size: 2.5rem
+    color: rgb(41, 41, 41)
+
+  h3
+    text-align: center
+    font-size: 1.2rem
+    font-weight: 300
+    color: #969696
+    margin-bottom: 60px
+    // opacity: 0.6
+
+    a
+      text-decoration: none
+      color: #969696
+
+      &:hover
+        color: #242424
+        text-decoration: underline
+
+    span
+      color: #242424
+      margin: 0 20px
+
+
+.artboard
+  width: 800px
+  height: 600px
+  background: #383838
+  box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.2)
+  border-radius: 3px
+  margin: 50px auto
+  border: 20px white solid
+  position: relative
+
+  .cross-shape-container
+    height: 100%
+    width: 100%
+    position: relative
+
+    .cross-shape__item
+      position: absolute
+
+
+      &::before
+        content: ""
+        display: block
+        height: 30px
+        width: 15px
+        border-radius: 5px
+
+      &::after
+        content: ""
+        display: block
+        height: 30px
+        width: 15px
+        border-radius: 5px
+        position: absolute
+        top: 50%
+        left: 50%
+
+    .cross-shape__item_blue
+      animation: pulse 1s 300ms linear infinite
+
+      &::before, &::after
+        background-color: rgb(81, 223, 237)
+
+    .cross-shape__item_red
+      animation: pulse 1s 600ms linear infinite
+
+      &::before, &::after
+        background-color: rgb(246, 112, 144)
+
+    .cross-shape__item_yellow
+      animation: pulse 1s 900ms linear infinite
+
+      &::before, &::after
+        background-color: rgb(240, 213, 117)
+
+  .cross-shape-container > div:after
+    transform: translate(-50%, -50%) rotate(90deg)
+    -webkit-transform: translate(-50%, -50%) rotate(90deg)
+
+  .cross-shape__item_blue1
+    top: 10%
+    left: 30%
+
+  .cross-shape__item_blue2
+    top: 20%
+    left: 50%
+
+  .cross-shape__item_blue3
+    top: 40%
+    left: 65%
+
+  .cross-shape__item_blue4
+    top: 35%
+    left: 5%
+
+  .cross-shape__item_blue5
+    top: 10%
+    left: 80%
+
+  .cross-shape__item_red1
+    top: 8%
+    left: 42%
+
+  .cross-shape__item_red2
+    top: 35%
+    left: 55%
+
+  .cross-shape__item_red3
+    top: 14%
+    left: 60%
+
+  .cross-shape__item_red4
+    top: 25%
+    left: 40%
+
+  .cross-shape__item_red5
+    top: 50%
+    left: 10%
+
+  .cross-shape__item_red6
+    top: 25%
+    left: 85%
+
+
+  .cross-shape__item_yellow1
+    top: 35%
+    left: 25%
+
+  .cross-shape__item_yellow2
+    top: 28%
+    left: 70%
+
+  .cross-shape__item_yellow3
+    top: 10%
+    left: 8%
+
+  .cross-shape__item_yellow4
+    top: 50%
+    left: 90%
+
+
+// bb character
+.bb-starwars
+  display: inline-block
+  position: absolute
+  top: 70%
+  // left: 50%
+  transform: translate(-50%, -50%)
+  -webkit-transform: translate(-50%, -50%)
+  animation-name: move
+  animation-duration: 5s
+  animation-fill-mode: forwards
+  animation-timing-function: ease-in-out
+  animation-iteration-count: infinite
+  animation-direction: alternate
+
+.bb__body
+  width: 250px
+  height: 250px
+  background-color: $bb-body-color
+  border-radius: 50%
+  +border-size()
+  overflow: hidden
+  animation: spin 5s linear infinite
+  -webkit-animation: spin 5s linear infinite alternate
+
+  & > .bb__shadow-crop
+    width: 250px
+    height: 249px
+    border-radius: 50%
+    display: inline-block
+    position: absolute
+    top: 0
+    overflow: hidden
+    // +border-size()
+
+    .bb__shadow
+      width: 250px
+      height: 250px
+      border-radius: 50%
+      display: inline-block
+      position: relative
+      box-shadow: 0px 0px 60px rgba(33, 150, 243, 0.21)
+
+    .bb__shadow1
+      left: -25%
+
+    .bb__shadow2
+      top: -103%
+      left: 12%
+
+
+  & > .bb__circle_small
+    position: absolute
+    background-color: $dark-circle-color
+    height: 25px
+    width: 25px
+    border-radius: 50%
+
+  .bb__circle_small1
+    top: 35%
+    left: 55%
+
+  .bb__sircle_small2
+    top: 70%
+    left: 25%
+
+  & > .bb__circle_big
+    height: 130px
+    width: 130px
+    display: inline-block
+    border-radius: 50%
+    position: relative
+    background-color: $big-cirle-color
+    +border-size()
+
+    .bb__inside-circle
+      background: #fff
+      height: 50px
+      width: 50px
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      border-radius: 50%
+      +border-size()
+
+  .bb__circle_big1
+    top: 0
+    left: -20%
+
+  .bb__circle_big2
+    top: 5%
+    left: 38%
+
+  & > .bb_circle_gigantic
+    height: 400px
+    width: 400px
+    position: relative
+    top: -230%
+    left: 50%
+    display: inline-block
+    border-radius: 50%
+    background-color: $big-cirle-color
+    +border-size()
+
+  & > .bb__line
+    width: 12px
+    background-color: $dark-circle-color
+    display: inline-block
+    position: absolute
+
+  .bb__line1
+    height: 70px
+    top: 10%
+    left: 45%
+    transform: rotate(75deg)
+
+  .bb__line2
+    height: 62px
+    top: 42%
+    left: 72%
+    transform: rotate(30deg)
+
+  .bb__line3
+    height: 75px
+    top: 46%
+    left: 36%
+    transform: rotate(135deg)
+
+.bb-head
+  height: 160px
+  width: 160px
+  position: absolute
+  top: -15%
+  left: -15%
+  transform: rotate(-37deg)
+  animation-name: move-head
+  animation-duration: 3s
+  animation-fill-mode: forwards
+  animation-timing-function: ease-in-out
+  animation-iteration-count: infinite
+  animation-direction: alternate
+
+  & > .bb-head__crop
+    height: 50%
+    position: relative
+    overflow: hidden
+
+    .bb-head__circle
+      height: 160px
+      width: 160px
+      border-radius: 50%
+      position: absolute
+      +border-size()
+
+    .bb-head__circle1
+      background-color: $bb-body-color
+
+    .bb-head__circle2
+      box-shadow: 7px 0px 0px 5px rgb(255, 255, 255) inset
+
+    .bb-head__circle3
+      box-shadow: -6px 0px 0px 5px  rgba(33, 150, 243, 0.21) inset
+
+  & > .bb-head__line
+    width: 12px
+    background-color: $dark-circle-color
+    position: absolute
+
+  .bb-head__line1
+    height: 29px
+    transform: rotate(-46deg)
+    left: 5%
+    top: 45%
+    z-index: 2
+
+  .bb-head__line2
+    height: 125px
+    transform: rotate(-93deg)
+    left: 48%
+    top: 18%
+    z-index: 2
+
+  .bb-head__line3
+    height: 21px
+    transform: rotate(-135deg)
+    left: 89%
+    top: 45%
+    z-index: 2
+
+  & > .bb-head__line-blue
+    display: inline-block
+    background-color: #97cdec
+    position: absolute
+    top: 7%
+    left: 45%
+    height: 137px
+    width: 15px
+    transform: rotate(-93deg)
+
+  & > .bb-head__eye
+    height: 17px
+    width: 17px
+    background-color: $dark-circle-color
+    position: absolute
+    top: 28%
+    left: 68%
+    border-radius: 50%
+
+  & > .bb-head__ear
+    height: 50px
+    width: 50px
+    background-color: #295a6d
+    position: absolute
+    top: 13%
+    left: 31%
+    border-radius: 50%
+    border: 9px solid $border-color
+    overflow: hidden
+
+    .bb-head__ear-line
+      position: absolute
+      height: 70px
+      width: 6px
+      background: #2a6b80
+      transform: rotate(-124deg)
+
+    .bb-head__ear-line1
+      top: -56%
+
+    .bb-head__ear-line2
+      top: -13%
+
+  // & > .bb-tail
+  //   position: absolute
+  //   height: 100px
+  //   width: 10px
+  //   border-radius: 8px
+  //   background: $dark-circle-color
+
+.ground
+  width: 100%
+  height: 100px
+  position: absolute
+  bottom: -8%
+
+  & > .ground__item
+    position: absolute
+    width: 12px
+    background-color: #795548
+    transform: rotate(90deg)
+    border-radius: 8px
+
+  .ground__item1
+    height: 385px
+    top: -174%
+    left: 27%
+
+  .ground__item2
+    height: 276px
+    top: -120%
+    left: 79%
+
+  .ground__item3
+    height: 29px
+    top: 3%
+    left: 57%
+
+  & > .ground__item-stone
+    height: 20px
+    width: 40px
+    position: absolute
+    top: -7px
+    overflow: hidden
+
+  .ground__item-stone::after
+    content: ''
+    display: block
+    height: 40px
+    width: 40px
+    border-radius: 50%
+    box-sizing: border-box
+    border: 12px solid #795548
+
+  .ground__item-stone1
+    left: 20%
+
+  .ground__item-stone2
+    left: 83%
+
+// animation
+@keyframes pulse
+  0%
+    transform: scale(1)
+    -webkit-transform: scale(1)
+  90%
+    transform: scale(0.3)
+    -webkit-transform: scale(0.3)
+  100%
+    transform: scale(1)
+    -webkit-transform: scale(1)
+
+@keyframes spin
+  0%
+    transform: rotate(0deg)
+    -webkit-transform: rotate(0deg)
+
+  100%
+    transform: rotate(360deg)
+    -webkit-transform: rotate(360deg)
+
+
+@keyframes move
+  0%
+    left: 20%
+
+  100%
+    left: 80%
+
+@keyframes move-head
+  0%
+    transform: rotate(-37deg)
+
+  30%
+    transform: rotate(-58deg)
+
+  60%
+    transform: rotate(-20deg)
+
+  100%
+    transform: rotate(-26deg)
